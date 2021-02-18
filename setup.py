@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pymarkdown",
+    name="pymarkdownsax",
     version="0.0.1",
     author="Piotr Zielinski",
     author_email="rozbujnik@gmail.com",
