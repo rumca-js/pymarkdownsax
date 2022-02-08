@@ -1,3 +1,5 @@
+import io
+
 
 import re
 
@@ -549,6 +551,7 @@ class PyMarkDownSax2Html(PyMarkDownSax):
         self._prev_tag = None
         self.embed_width = "500"
         self.embed_height = "400"
+        self._fh = None
 
     def convert2html(self, from_file, to_file):
         self._fh = open(to_file, 'wb')
@@ -557,6 +560,17 @@ class PyMarkDownSax2Html(PyMarkDownSax):
 
         data = self.get_html_footer()
         self._fh.write(data.encode("utf-8"))
+
+    def convert_data(self, data):
+        self._fh = io.BytesIO()
+
+        self.parse_data(data)
+
+        data = self.get_html_footer()
+        self._fh.write(data.encode("utf-8"))
+
+        self._fh.seek(0)
+        return self._fh.read().decode("utf-8")
 
     def get_html_header(self):
         return """\

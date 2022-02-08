@@ -28,6 +28,10 @@ class TestPandoc(pymarkdownsax.PyMarkDownSax2Html):
         attributes = {"text" : token.group(0)}
         self.tagstack.append([pymarkdownsax.PyMarkDownSax2Html.CHARACTERS, attributes])
 
+class TestOriginalPandoc(pymarkdownsax.PyMarkDownSax2Html):
+
+    def __init__(self):
+        super().__init__()
 
 class TestPyMarkDownSax(unittest.TestCase):
 
@@ -1007,6 +1011,28 @@ title: mytitle
         tag = pan.tagstack[3]
         self.assertTrue( tag[0] == pymarkdownsax.PyMarkDownSax2Html.CHARACTERS )
         self.assertTrue( tag[1]['text'] == '\n' )
+
+    def test_original(self):
+
+        input_data = '''---
+title: mytitle
+date: mydate
+---
+
+$YT[MyLink](./indekx.html)
+
+
+'''
+
+        pan = TestOriginalPandoc()
+        output = pan.convert_data(input_data)
+
+        expected_text = """<div id="header">
+<h1 class="title">mytitle</h1>
+<h3 class="date">mydate</h3>
+</div>"""
+
+        self.assertTrue(output.find(expected_text) != -1)
 
 
 if __name__ == '__main__':
