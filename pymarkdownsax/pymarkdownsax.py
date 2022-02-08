@@ -520,8 +520,6 @@ class PyMarkDownSaxDom(PyMarkDownSax):
 
         super().__init__()
 
-        self.parse(mdfile)
-
     def startElement(self, tag, attributes):
         if tag == PyMarkDownSax.HEADER:
             self.header = attributes
