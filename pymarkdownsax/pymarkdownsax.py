@@ -513,7 +513,7 @@ class PyMarkDownSax(object):
 
 class PyMarkDownSaxDom(PyMarkDownSax):
 
-    def __init__(self, mdfile, only_header=False):
+    def __init__(self, only_header=False):
         self.text = ""
         self.header = {}
         self.only_header = only_header
