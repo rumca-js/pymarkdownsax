@@ -31,7 +31,7 @@ def parse(self, file_name):
 Parses a file name.
 
 ```
-def parse_data(self, data = None):
+def parse_string(self, data = None):
 ```
 Parses string of data.
 
@@ -58,10 +58,18 @@ Indicates that characters were processed. Every word is called separately. White
 ### Reading a file
 
 ```
-def __init__(self, from_file, to_file):
+def __init__(self):
 ```
 
 The class goal is to translate MarkDown files to HTML.
+
+```
+def to_html(self, from_md_file_name, to_html_file_name):
+```
+
+```
+def to_string(self, string):
+```
 
 # Limitations
 

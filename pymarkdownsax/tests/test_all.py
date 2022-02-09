@@ -51,7 +51,7 @@ Test
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -78,7 +78,7 @@ Test
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -105,7 +105,7 @@ Test
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -139,7 +139,7 @@ Test
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -167,7 +167,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -197,7 +197,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -239,7 +239,7 @@ More
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -289,7 +289,7 @@ text_2.
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -327,7 +327,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -379,7 +379,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -433,7 +433,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -488,7 +488,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -531,7 +531,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -569,7 +569,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -604,7 +604,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -644,7 +644,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -687,7 +687,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -730,7 +730,7 @@ whatever
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -793,7 +793,7 @@ four
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -856,7 +856,7 @@ text three
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -922,7 +922,7 @@ $[MyLink](./indekx.html)
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -957,7 +957,7 @@ $YT[MyLink](./indekx.html)
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -990,7 +990,7 @@ title: mytitle
 '''
 
         pan = TestPandoc()
-        pan.parse_data(data)
+        pan.parse_string(data)
 
         self.assertTrue( len(pan.tagstack) > 0)
 
@@ -1025,7 +1025,7 @@ $YT[MyLink](./indekx.html)
 '''
 
         pan = TestOriginalPandoc()
-        output = pan.convert_data(input_data)
+        output = pan.to_string(input_data)
 
         expected_text = """<div id="header">
 <h1 class="title">mytitle</h1>

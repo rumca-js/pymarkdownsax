@@ -93,9 +93,9 @@ class PyMarkDownSax(object):
         with open(self._file_name, 'r', encoding="utf-8") as fh:
             self._data = fh.read()
 
-        self.parse_data()
+        self.parse_string()
 
-    def parse_data(self, data = None):
+    def parse_string(self, data = None):
         self._pos = 0
         self._prev_pos = self._pos
 
@@ -551,7 +551,7 @@ class PyMarkDownSax2Html(PyMarkDownSax):
         self.embed_height = "400"
         self._fh = None
 
-    def convert2html(self, from_file, to_file):
+    def to_html(self, from_file, to_file):
         self._fh = open(to_file, 'wb')
 
         self.parse(from_file)
@@ -559,10 +559,10 @@ class PyMarkDownSax2Html(PyMarkDownSax):
         data = self.get_html_footer()
         self._fh.write(data.encode("utf-8"))
 
-    def convert_data(self, data):
+    def to_string(self, data):
         self._fh = io.BytesIO()
 
-        self.parse_data(data)
+        self.parse_string(data)
 
         data = self.get_html_footer()
         self._fh.write(data.encode("utf-8"))
