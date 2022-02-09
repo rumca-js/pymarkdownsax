@@ -550,6 +550,7 @@ class PyMarkDownSax2Html(PyMarkDownSax):
         self.embed_width = "500"
         self.embed_height = "400"
         self._fh = None
+        self.set_no_header(False)
 
     def to_html(self, from_file, to_file):
         self._fh = open(to_file, 'wb')
@@ -570,7 +571,13 @@ class PyMarkDownSax2Html(PyMarkDownSax):
         self._fh.seek(0)
         return self._fh.read().decode("utf-8")
 
+    def set_no_header(self, value):
+        self._no_header = value
+
     def get_html_header(self):
+        if self._no_header:
+            return ""
+
         return """\
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -590,6 +597,9 @@ class PyMarkDownSax2Html(PyMarkDownSax):
     """
 
     def get_html_footer(self):
+        if self._no_header:
+            return ""
+
         data = "</p><p id=\"footer\">Generated using pymarkdownsax {0}</p></body>\n</html>".format(__version__)
         return data
 
