@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pymarkdownsax",
-    version="0.0.1",
+    version="0.0.2",
     author="Piotr Zielinski",
     author_email="rozbujnik@gmail.com",
     description="MarkDown processing for python",

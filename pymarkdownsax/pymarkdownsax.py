@@ -4,7 +4,7 @@ import io
 import re
 
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 def find_matching_bracket(text, bracket_start, bracket_stop, pos=None, end=None):
